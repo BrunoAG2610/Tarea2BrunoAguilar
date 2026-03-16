@@ -224,9 +224,15 @@ button {
     background: var(--gradient-primary);
     color: white;
     border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
     /* ERROR 5: El botón primario no tiene profundidad ni efecto de brillo
        PISTA: Falta la propiedad que agrega sombras al elemento */
     box-shadow: var(--shadow-xl), 0 0 30px rgba(14, 165, 233, 0.4);
+    border-radius: 20px;
 }
 
 .btn--primary:hover {
@@ -433,6 +439,7 @@ button {
     display: flex;
     /* ERROR 8: Los botones del hero están pegados sin espacio entre ellos
        PISTA: Falta la propiedad que define el espacio entre elementos flex */
+    gap: var(--spacing-md);
     flex-wrap: wrap;
 }
 
@@ -453,6 +460,7 @@ button {
     justify-content: center;
     /* ERROR 9: El blob en el hero no tiene la animación de forma dinámica
        PISTA: Falta la propiedad animation que referencia a blob-animation */
+    animation: blob-animation 8s infinite;
     position: relative;
 }
 
@@ -553,6 +561,7 @@ button {
     display: grid;
     /* ERROR 10: Las cards de intereses no se muestran en 3 columnas, están apiladas
        PISTA: Falta la propiedad de CSS Grid que define las columnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-3xl);
 }
